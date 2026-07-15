@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <!-- 火焰渐变 -->
+    <linearGradient id="fireGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff4500"/>
+      <stop offset="50%" style="stop-color:#ff6b00"/>
+      <stop offset="100%" style="stop-color:#00f0ff"/>
+    </linearGradient>
+    
+    <!-- 子弹金属渐变 -->
+    <linearGradient id="metalGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2a2a2a"/>
+      <stop offset="50%" style="stop-color:#4a4a4a"/>
+      <stop offset="100%" style="stop-color:#1a1a1a"/>
+    </linearGradient>
+    
+    <!-- 发光效果 -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 背景圆形 -->
+  <circle cx="50" cy="50" r="48" fill="#0a0a15" stroke="#00f0ff" stroke-width="2"/>
+  
+  <!-- 火焰拖尾 -->
+  <path d="M 85 50 Q 70 35, 50 50 Q 70 65, 85 50" fill="url(#fireGrad)" opacity="0.9" filter="url(#glow)"/>
+  <path d="M 95 50 Q 75 25, 45 50 Q 75 75, 95 50" fill="url(#fireGrad)" opacity="0.6"/>
+  
+  <!-- 子弹主体 -->
+  <ellipse cx="30" cy="50" rx="18" ry="8" fill="url(#metalGrad)"/>
+  
+  <!-- 子弹尖端 -->
+  <polygon points="48,50 12,42 12,58" fill="#ff6b00"/>
+  
+  <!-- 子弹高光 -->
+  <ellipse cx="25" cy="47" rx="10" ry="3" fill="#ffffff" opacity="0.3"/>
+  
+  <!-- 速度线 -->
+  <line x1="55" y1="40" x2="70" y2="35" stroke="#00f0ff" stroke-width="2" opacity="0.8"/>
+  <line x1="55" y1="50" x2="75" y2="50" stroke="#00f0ff" stroke-width="3" opacity="0.9"/>
+  <line x1="55" y1="60" x2="70" y2="65" stroke="#00f0ff" stroke-width="2" opacity="0.8"/>
+  
+  <!-- R字母 -->
+  <text x="50" y="58" font-family="Arial Black, sans-serif" font-size="20" font-weight="900" 
+        fill="#00f0ff" text-anchor="middle" filter="url(#glow)">R</text>
+</svg>
