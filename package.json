@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview",
-    "server": "node server/index.js"
+    "preview": "npm run build && wrangler dev",
+    "server": "node server/index.js",
+    "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
     "@react-three/drei": "^9.92.7",
@@ -22,6 +23,7 @@
     "zustand": "^4.4.7"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.45.0",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "@types/three": "^0.160.0",
@@ -31,6 +33,7 @@
     "puppeteer-core": "^25.3.0",
     "tailwindcss": "^3.3.6",
     "typescript": "^5.2.2",
-    "vite": "^6.3.5"
+    "vite": "^6.3.5",
+    "wrangler": "^4.111.0"
   }
 }
